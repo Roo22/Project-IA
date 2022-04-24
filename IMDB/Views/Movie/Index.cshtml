@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<IMDB.Models.Movie>
+@using System.Web.Optimization
 
 @{
     ViewBag.Title = "Index";
@@ -35,6 +36,21 @@
                             <p class="card-text"><b>Category: </b>@item.MovieCategory</p>
                         </div>
                     </div>
+                    <div class="class=" col-md-12"">
+                        <div class="card-body ">
+                            <div class="voting">
+                                <button id="Likebtn">
+                                    <i>Like</i>
+                                </button>
+                                <input type="number" id="input1" value="0" name="" />
+                                <button id="DisLikebtn">
+                                    <i>DisLike</i>
+                                </button>
+                                <input type="number" id="input2" value="0" name="" />
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="col-md-12">
                         <div class="card-footer ">
                             <p class="card-text">
@@ -42,8 +58,30 @@
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     }
 </div>
+@section Scripts{
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+
+    $(document).ready(function () {
+        $("#Likebtn").click(function () {
+            var input = $('#input1').val();
+            input++;
+            $('#input1').val(input);
+        })
+        $("#DisLikebtn").click(function () {
+            var input = $('#input2').val();
+            input++;
+            $('#input2').val(input);
+        })
+    })
+
+
+    </script>
+}
