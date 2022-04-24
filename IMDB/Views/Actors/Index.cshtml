@@ -1,0 +1,77 @@
+﻿@model IEnumerable<IMDB.Models.Actor>
+@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfilePictureUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="align-middle">
+                <img class="rounded-circle" src="@item.ProfilePictureUrl" style="max-width: 100px" />
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td class="align-middle">
+                @Html.ActionLink("Edit", "Edit", new { id = item.ActorId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ActorId }) |
+                <button type="button" class="btn btn-danger" id="delete" onclick="Delete(@item.ActorId)">Delete</button>
+            </td>
+        </tr>
+    }
+
+</table>
+@section Scripts{
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function Delete(id) {
+            if (confirm("Are You Sure..?")) {
+                $.ajax({
+
+                    type: "GET",
+                    url: "/Actors/Delete/" + id,
+                    success: function (response) {
+                        if (response.result == 1) {
+                            $("#record_" + id).remove();
+                        }
+                        else {
+                            alert(" Not Deleted")
+
+                        }
+                    }
+
+                })
+            }
+
+        }
+
+
+    </script>
+}
