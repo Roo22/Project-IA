@@ -26,6 +26,8 @@ namespace   IMDB.Models
         public DbSet<ActorMovie> ActorsMovies { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Director> Directors { get; set; }
+        public DbSet<User> Users { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

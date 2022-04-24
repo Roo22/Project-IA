@@ -229,6 +229,7 @@
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\DirectorController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Data\Enums\MovieCategory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -237,6 +238,14 @@
     <Compile Include="Migrations\202204200438589_Initial.designer.cs">
       <DependentUpon>202204200438589_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204240151347_AddUser.cs" />
+    <Compile Include="Migrations\202204240151347_AddUser.designer.cs">
+      <DependentUpon>202204240151347_AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204240202129_user.cs" />
+    <Compile Include="Migrations\202204240202129_user.designer.cs">
+      <DependentUpon>202204240202129_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Actor.cs" />
     <Compile Include="Models\ActorMovie.cs" />
@@ -244,6 +253,7 @@
     <Compile Include="Models\Director.cs" />
     <Compile Include="Models\IdentifyModel.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -286,6 +296,8 @@
     <Content Include="Views\Movie\Create.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Movie\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -299,6 +311,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202204200438589_Initial.resx">
       <DependentUpon>202204200438589_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204240151347_AddUser.resx">
+      <DependentUpon>202204240151347_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204240202129_user.resx">
+      <DependentUpon>202204240202129_user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
