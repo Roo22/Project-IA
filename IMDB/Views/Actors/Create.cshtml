@@ -17,10 +17,10 @@
         <div class="form-group">
             <img id="ProfilePicturePrev" />
         </div>
-        <div class="form-group">
+        <div class="form-group" id="ProfilePictureUrl">
             @Html.LabelFor(model => model.ProfilePictureUrl, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ProfilePictureUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ProfilePictureUrl, new { htmlAttributes = new { @class = "form-control" }})
                 @Html.ValidationMessageFor(model => model.ProfilePictureUrl, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -283,6 +283,9 @@
     <Content Include="Views\Director\Create.cshtml" />
     <Content Include="Views\Director\Details.cshtml" />
     <Content Include="Views\Director\Edit.cshtml" />
+    <Content Include="Views\Movie\Create.cshtml" />
+    <Content Include="Views\Movie\Details.cshtml" />
+    <Content Include="Views\Movie\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
